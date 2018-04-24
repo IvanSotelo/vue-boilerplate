@@ -2,18 +2,19 @@ language: node_js
 sudo: required
 dist: trusty
 node_js:
-  - "iojs"
-  - "8"
+  - "8.11.1"
 
 before_script:
   - export CHROME_BIN=/usr/bin/google-chrome
   - sudo apt-get update
   - sudo apt-get install -y libappindicator1 fonts-liberation
-  - wget https://dl.google.com/linux/direct/google-chrome-
-    stable_current_amd64.deb
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+
+before_install:
+  - npm i -g npm@5.6.0
 
 install:
   - npm install
@@ -23,3 +24,7 @@ script:
   - npm run lint
   - npm run test
   - npm run build
+
+cache:
+  directories:
+    - "node_modules"
