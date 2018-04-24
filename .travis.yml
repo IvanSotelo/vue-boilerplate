@@ -20,9 +20,9 @@ install:
   - npm install
 
 script:
-  - npm run start
   - npm run lint
   - npm run test
+  - npm run build
 
 cache:
   directories:
