@@ -21,7 +21,9 @@ install:
 
 script:
   - npm run lint
+  {{#testing unit e2e}}
   - npm run test
+  {{/testing}}
   - npm run build
 
 cache:

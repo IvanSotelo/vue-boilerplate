@@ -1,0 +1,23 @@
+.DS_Store
+{{#if unit}}
+/test/unit/coverage/
+/test/e2e/reports/
+coverage
+{{/if}}
+node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-error.log*
+yarn-debug.log*
+selenium-debug.log
+thumbs.db
+!.gitkeep
+/dist/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
