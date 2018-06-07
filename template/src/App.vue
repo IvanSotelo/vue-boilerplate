@@ -2,22 +2,36 @@
 #app
   img(src='./assets/logo.png')
   h1 {{loading}}
+  {{#isEnabled plugins 'vue-router'}}
   router-view(v-cloak)
+  {{else}}
+  HelloWorld
+  {{/isEnabled}}
   loader(v-if="!loading")
 </template>
 
 <script>
 import Loader from '@/loader/Loader';
-
+{{#isEnabled plugins 'vue-router'}}
+{{else}}
+import HelloWorld from '@/components/HelloWorld';
+{{/isEnabled}}
 export default {
-  name: 'App',
+  name: '{{ name }}',
   components: {
+    {{#isEnabled plugins 'vue-router'}}
+    {{else}}
+    HelloWorld,
+    {{/isEnabled}}
     Loader,
   },
 };
 </script>
-
+{{#if_eq cssConfig 'scss'}}
 <style lang="scss">
+{{else}}
+<style>
+{{/if_eq}}
 body {
   margin: 0;
 }

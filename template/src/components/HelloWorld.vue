@@ -31,6 +31,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+{{#if_eq cssConfig 'scss'}}
 <style lang="scss" scoped>
 h1, h2 {
   font-weight: normal;
@@ -47,3 +48,21 @@ ul {
   }
 }
 </style>
+{{else}}
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul>li {
+  display: inline-block;
+  margin: 0 10px;
+}
+ul>li>a {
+  color: #42b983;
+}
+</style>
+{{/if_eq}}
