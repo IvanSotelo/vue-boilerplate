@@ -14,6 +14,7 @@ export default {
 };
 </script>
 
+{{#if_eq cssConfig 'scss'}}
 <style lang="scss">
 .loader{
   position: fixed;
@@ -28,3 +29,19 @@ export default {
   }
 }
 </style>
+{{else}}
+<style>
+.loader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: $background-color;
+  z-index: 999;
+}
+.loader > .fingerprint-spinner{
+  position: initial !important;
+}
+</style>
+{{/if_eq}}
