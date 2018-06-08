@@ -37,7 +37,7 @@ export default {
   height: 100%;
   top: 0px;
   left: 0px;
-  background-image: $background-color;
+  background-image: linear-gradient(117deg,#3c2747,#222634 98%,#252433);
   z-index: 999;
 }
 .loader > .fingerprint-spinner{
