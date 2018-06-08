@@ -40,6 +40,4 @@ npm run lint
 ```
 ---
 
-This project was generated with [electron-vue](https://github.com/IvanSotelo/Vue-Electron) using [vue-cli](https://github.com/vuejs/vue-cli).
-
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
