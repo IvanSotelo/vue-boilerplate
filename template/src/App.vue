@@ -11,12 +11,27 @@
 
 <script>
 import Loader from '@/loader/Loader';
+import ImagePreloader from 'image-preloader';
 {{#isEnabled plugins 'vue-router'}}
 {{else}}
 import HelloWorld from '@/components/HelloWorld';
 {{/isEnabled}}
 export default {
   name: '{{ name }}',
+  data() {
+    return {
+      loading: false,
+    };
+  },
+  created() {
+    const preloader = new ImagePreloader();
+    const n = ['../assets/img/map.svg'];
+    preloader.preload(n)
+      .then(() => {
+        console.log('%c Vue Boilerplate By Ivan Sotelo %c 0.0.0 ', 'background: #35495e; color: #fff', 'background: #60b883; color: #fff');
+        this.loading = true;
+      });
+  },
   components: {
     {{#isEnabled plugins 'vue-router'}}
     {{else}}
