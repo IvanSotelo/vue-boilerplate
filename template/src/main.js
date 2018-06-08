@@ -9,7 +9,7 @@ import App from './App';
 import router from './router';
 {{/isEnabled}}
 {{#isEnabled plugins 'vuex'}}
-import store from './store'
+import store from './store';
 {{/isEnabled}}
 
 Vue.config.productionTip = false;
