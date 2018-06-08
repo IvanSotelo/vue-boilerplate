@@ -1,7 +1,6 @@
 <template lang="pug">
 #app
   img(src='./assets/logo.png')
-  h1 {{loading}}
   {{#isEnabled plugins 'vue-router'}}
   router-view(v-cloak)
   {{else}}

@@ -1,6 +1,6 @@
 <template lang="pug">
   .hello
-    h1 {{msg}}
+    h1 \{{msg}}
     h2 Essential Links
     ul
       li
