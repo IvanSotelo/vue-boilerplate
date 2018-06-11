@@ -29,3 +29,5 @@ new Vue({
   components: { App },
   template: '<App/>',
 });
+
+console.log('%c Vue Boilerplate By Ivan Sotelo %c 0.0.0 ', 'background: #35495e; color: #fff', 'background: #60b883; color: #fff');
