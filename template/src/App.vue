@@ -6,7 +6,7 @@
   {{else}}
   HelloWorld
   {{/isEnabled}}
-  loader(v-if="!loading")
+  loader(v-if="isLoading")
 </template>
 
 <script>
@@ -20,16 +20,24 @@ export default {
   name: '{{ name }}',
   data() {
     return {
-      loading: false,
+      {{#isEnabled plugins 'vuex'}}
+      {{else}}
+      isLoading: true,
+      {{/isEnabled}}
+      images:[
+        '../assets/img/map.svg',
+      ],
     };
   },
   created() {
     const preloader = new ImagePreloader();
-    const n = ['../assets/img/map.svg'];
-    preloader.preload(n)
+    preloader.preload(this.images)
       .then(() => {
-        console.log('%c Vue Boilerplate By Ivan Sotelo %c 0.0.0 ', 'background: #35495e; color: #fff', 'background: #60b883; color: #fff');
-        this.loading = true;
+        {{#isEnabled plugins 'vuex'}}
+        this.$store.dispatch('PRELOAD_STATE');
+        {{else}}
+        this.isLoading = false;
+        {{/isEnabled}}
       });
   },
   components: {
@@ -39,6 +47,13 @@ export default {
     {{/isEnabled}}
     Loader,
   },
+  {{#isEnabled plugins 'vuex'}}
+  computed: {
+    isLoading() {
+      return this.$store.getters.isLoading;
+    },
+  },
+  {{/isEnabled}}
 };
 </script>
 {{#if_eq cssConfig 'scss'}}
