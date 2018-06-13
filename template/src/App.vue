@@ -62,6 +62,7 @@ export default {
 <style>
 {{/if_eq}}
 body {
+  background-color: $background-color;
   margin: 0;
 }
 #app {
