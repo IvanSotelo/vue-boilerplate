@@ -11,19 +11,21 @@
 
 <script>
 import Loader from '@/loader/Loader';
+{{#isEnabled plugins 'vuex'}}
+{{else}}
 import ImagePreloader from 'image-preloader';
+{{/isEnabled}}
 {{#isEnabled plugins 'vue-router'}}
 {{else}}
 import HelloWorld from '@/components/HelloWorld';
 {{/isEnabled}}
 export default {
   name: '{{ name }}',
+  {{#isEnabled plugins 'vuex'}}
+  {{else}}
   data() {
     return {
-      {{#isEnabled plugins 'vuex'}}
-      {{else}}
       isLoading: true,
-      {{/isEnabled}}
       images:[
         '../assets/img/map.svg',
       ],
@@ -33,13 +35,10 @@ export default {
     const preloader = new ImagePreloader();
     preloader.preload(this.images)
       .then(() => {
-        {{#isEnabled plugins 'vuex'}}
-        this.$store.dispatch('PRELOAD_STATE');
-        {{else}}
         this.isLoading = false;
-        {{/isEnabled}}
       });
   },
+  {{/isEnabled}}
   components: {
     {{#isEnabled plugins 'vue-router'}}
     {{else}}

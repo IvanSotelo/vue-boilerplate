@@ -5,12 +5,31 @@
 
 <script>
 import { FingerprintSpinner } from 'epic-spinners';
+{{#isEnabled plugins 'vuex'}}
+import ImagePreloader from 'image-preloader';
+{{/isEnabled}}
 
 export default {
   name: 'Loader',
   components: {
     FingerprintSpinner,
   },
+  {{#isEnabled plugins 'vuex'}}
+  data() {
+    return {
+      images:[
+        '../assets/img/map.svg',
+      ],
+    };
+  },
+  created() {
+    const preloader = new ImagePreloader();
+    preloader.preload(this.images)
+      .then(() => {
+        this.$store.dispatch('PRELOAD_STATE');
+      });
+  },
+  {{/isEnabled}}
 };
 </script>
 
