@@ -18,7 +18,8 @@ export default {
   data() {
     return {
       images:[
-        '../assets/img/map.svg',
+        './assets/logo.png',
+        // Your images for preload
       ],
     };
   },

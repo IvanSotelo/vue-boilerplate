@@ -25,6 +25,10 @@ export default {
   data() {
     return {
       isLoading: true,
+      images:[
+        './assets/logo.png',
+        // Your images for preload
+      ],
     };
   },
   created() {
