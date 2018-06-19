@@ -26,9 +26,6 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
-      images:[
-        '../assets/img/map.svg',
-      ],
     };
   },
 };
