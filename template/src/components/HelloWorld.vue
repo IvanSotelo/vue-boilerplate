@@ -1,5 +1,6 @@
 <template lang="pug">
   .hello
+    img(src='./assets/logo.png')
     h1 \{{msg}}
     h2 Essential Links
     ul
@@ -25,6 +26,9 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
+      images:[
+        '../assets/img/map.svg',
+      ],
     };
   },
 };

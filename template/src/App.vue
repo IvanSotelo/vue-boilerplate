@@ -1,8 +1,7 @@
 <template lang="pug">
 #app
-  img(src='./assets/logo.png')
   {{#isEnabled plugins 'vue-router'}}
-  router-view(v-cloak)
+  router-view(v-cloak, v-if="!isLoading")
   {{else}}
   HelloWorld
   {{/isEnabled}}
@@ -26,9 +25,6 @@ export default {
   data() {
     return {
       isLoading: true,
-      images:[
-        '../assets/img/map.svg',
-      ],
     };
   },
   created() {
