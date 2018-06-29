@@ -1,8 +1,9 @@
 <template lang="pug">
-#app
   {{#isEnabled plugins 'vue-router'}}
+#app(v-bind:class="[isLoading ? 'is-loading' : 'is-loaded' , routeName]")
   router-view(v-cloak, v-if="!isLoading")
   {{else}}
+#app(v-bind:class="[isLoading ? 'is-loading' : 'is-loaded']")
   HelloWorld
   {{/isEnabled}}
   loader(v-if="isLoading")
@@ -51,6 +52,15 @@ export default {
     isLoading() {
       return this.$store.getters.isLoading;
     },
+    {{#isEnabled plugins 'vue-router'}}
+    routeName () {
+      return this.$store.getters.routeName;
+    },
+    {{/isEnabled}}
+  },
+  beforeCreate: function () {
+    let isMobile = window.innerWidth <= 768;
+    this.$store.dispatch('DEVICE_SIZE', isMobile);
   },
   {{/isEnabled}}
 };
