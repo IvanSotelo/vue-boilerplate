@@ -24,6 +24,8 @@
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "detect-browser": "^3.0.0",
     "epic-spinners": "^1.0.3",
     "gsap": "^1.20.4",
     "hamsterjs": "^1.1.3",

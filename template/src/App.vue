@@ -14,6 +14,7 @@ import Loader from '@/loader/Loader';
 {{#isEnabled plugins 'vuex'}}
 {{else}}
 import ImagePreloader from 'image-preloader';
+import { detect } from 'detect-browser';
 {{/isEnabled}}
 {{#isEnabled plugins 'vue-router'}}
 {{else}}
@@ -61,6 +62,11 @@ export default {
   beforeCreate: function () {
     let isMobile = window.innerWidth <= 768;
     this.$store.dispatch('DEVICE_SIZE', isMobile);
+  },
+  {{else}}
+  beforeCreate: function () {
+    const browser = detect();
+    console.log(browser.name);
   },
   {{/isEnabled}}
 };

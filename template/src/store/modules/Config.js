@@ -1,7 +1,11 @@
+import { detect } from 'detect-browser'
+const browser = detect()
+
 const state = {
   isMobile: false,
   routeName: '',
-  menuOpen: false
+  menuOpen: false,
+  browserName: browser.name
 }
 
 const mutations = {
@@ -31,7 +35,8 @@ const actions = {
 const getters = {
   isMobile: state => state.isMobile,
   routeName: state => state.routeName,
-  menuOpen: state => state.menuOpen
+  menuOpen: state => state.menuOpen,
+  browserName: state => state.browserName
 }
 
 export default {
