@@ -22,6 +22,13 @@ import HelloWorld from '@/components/HelloWorld';
 {{/isEnabled}}
 export default {
   name: '{{ name }}',
+  metaInfo: {
+    titleTemplate: '{{ name }} | %s',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
+  },
   {{#isEnabled plugins 'vuex'}}
   {{else}}
   data() {

@@ -23,6 +23,12 @@
 <script>
 export default {
   name: 'HelloWorld',
+  metaInfo: {
+    title: 'HelloWorld',
+    meta: [
+      { hid: 'description', name: 'description', content: 'My custom description' }
+    ]
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
