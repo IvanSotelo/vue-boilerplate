@@ -11,7 +11,9 @@ import router from './router';
 {{#isEnabled plugins 'vuex'}}
 import store from './store';
 {{/isEnabled}}
-
+{{#isEnabled plugins 'vue-i18n'}}
+import i18n from './lang';
+{{/isEnabled}}
 Vue.config.productionTip = false;
 {{#isEnabled plugins 'axios'}}
 Vue.http = Vue.prototype.$http = axios;
@@ -25,6 +27,9 @@ new Vue({
   {{/isEnabled}}
   {{#isEnabled plugins 'vuex'}}
   store,
+  {{/isEnabled}}
+  {{#isEnabled plugins 'vue-i18n'}}
+  i18n,
   {{/isEnabled}}
   components: { App },
   template: '<App/>',

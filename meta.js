@@ -61,8 +61,8 @@ module.exports = {
     plugins: {
       type: 'checkbox',
       message: 'Select which Vue plugins to install',
-      choices: ['axios', 'vue-router', 'vuex'],
-      default: ['axios', 'vue-router', 'vuex']
+      choices: ['axios', 'vue-router', 'vuex', 'vue-meta', 'vue-i18n'],
+      default: ['axios', 'vue-router', 'vuex', 'vue-meta', 'vue-i18n']
     },
     css: {
       type: 'confirm',
@@ -137,7 +137,9 @@ module.exports = {
       let dependencies = {
         'axios': '^0.18.0',
         'vue-router': '^3.0.1',
-        'vuex': '^3.0.1'
+        'vuex': '^3.0.1',
+        'vue-i18n': '^8.0.0',
+        'vue-meta': '^1.5.2',
       }
 
       if (Object.keys(plugins).length > 0) output += ',\n'
@@ -160,6 +162,7 @@ module.exports = {
     'src/components/HelloWorld.vue': 'plugins[\'vue-router\']',
     'src/router/**/*': 'plugins[\'vue-router\']',
     'src/store/**/*': 'plugins[\'vuex\']',
+    'src/lang/**/*': 'plugins[\'vue-i18n\']',
     'src/style/**/*': 'css && cssConfig === \'scss\'',
     'test/e2e/**/*': 'e2e',
     'test/unit/specs/**/*': 'unit',
