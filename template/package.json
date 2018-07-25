@@ -37,7 +37,6 @@
     "sniffer": "github:watsondg/sniffer",
     "swiper": "^4.2.2",
     "push-dir": "^0.4.1",
-    "vue-meta": "^1.5.2",
     "vue": "^2.5.2"{{deps plugins}}
   },
   "devDependencies": {
