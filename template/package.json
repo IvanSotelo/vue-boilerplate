@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "author": "{{ author }}",
   "description": "{{ description }}",
+  "homepage": "http://www.deskode.com",
   "license": null,
   "private": true,
   "scripts": {
